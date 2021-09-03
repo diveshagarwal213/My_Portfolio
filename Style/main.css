@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #0f0f0f;
+  color: #ececec;
+  font-family: 'Questrial', sans-serif;
+}
+
+:root {
+  --text-color: #ececec ;
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
+
+h3 {
+  font-weight: 400;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+/*---*/
+#D_link {
+  position: absolute;
+  border: 1px solid #ececec;
+  padding: 5px 8px;
+  font-size: 24px;
+  top: 22px;
+  left: 29px;
+  font-weight: 400;
+}
+
+#follow_me {
+  position: absolute;
+  padding: 5px 8px;
+  bottom: 10px;
+  left: 18px;
+}
+
+#follow_me h3 {
+  font-size: medium;
+  margin: 10px 0px;
+  text-transform: uppercase;
+}
+
+#follow_me a {
+  padding: 2px;
+  text-align: center;
+}
+
+#follow_me img {
+  width: 25px;
+  height: 25px;
+}
+
+#menu_button {
+  position: absolute;
+  top: 24px;
+  right: 29px;
+  background-color: transparent;
+}
+
+#left_arows_menu {
+  position: absolute;
+  width: 80px;
+  height: 155px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: height .5s ease-in-out;
+  transition: height .5s ease-in-out;
+}
+
+#left_arows_menu:hover {
+  height: 180px;
+}
+
+#left_arows_menu button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+
+#left_arows_menu button img {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  height: 20px;
+}
+
+/*---*/
+#hero {
+  width: 100%;
+  height: 100%;
+}
+/*# sourceMappingURL=main.css.map */
