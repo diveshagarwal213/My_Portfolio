@@ -37,7 +37,7 @@ h3 {
   position: relative;
 }
 
-/*---*/
+/*--------*/
 #D_link {
   position: absolute;
   border: 1px solid #ececec;
@@ -124,9 +124,153 @@ h3 {
   height: 20px;
 }
 
-/*---*/
+/*--------*/
+@-webkit-keyframes SlideUp {
+  0% {
+    -webkit-transform: translateY(-15%);
+            transform: translateY(-15%);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+    opacity: 1;
+  }
+}
+@keyframes SlideUp {
+  0% {
+    -webkit-transform: translateY(-15%);
+            transform: translateY(-15%);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes SlideDown {
+  0% {
+    -webkit-transform: translateY(10%);
+            transform: translateY(10%);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes SlideDown {
+  0% {
+    -webkit-transform: translateY(10%);
+            transform: translateY(10%);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
 #hero {
+  position: relative;
   width: 100%;
   height: 100%;
+}
+
+.hero_class {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.heroC_left {
+  position: absolute;
+  top: 0;
+  left: 15%;
+  width: 50%;
+  height: 100%;
+  opacity: 0;
+  -webkit-animation: SlideDown .5s 1s ease-in forwards;
+          animation: SlideDown .5s 1s ease-in forwards;
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.heroC_left div text {
+  font-size: 2vw;
+  letter-spacing: 0.5px;
+  font-weight: 400;
+}
+
+.heroC_left div h1 {
+  margin: 2vh 0px 0px 0px;
+  font-size: 6vw;
+  color: #fff;
+  position: relative;
+}
+
+.heroC_left div h1 span {
+  position: absolute;
+  font-size: 1vw;
+  top: 0;
+  right: 3vw;
+}
+
+.heroC_left div p {
+  margin: 5vh 0px 8vh 0px;
+  width: 50%;
+  line-height: 1.4;
+}
+
+.heroC_left div a {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  letter-spacing: 0.5px;
+}
+
+.heroC_left div a img {
+  margin: 0px 10px;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  width: 80px;
+  -webkit-transition: margin-left 0.5s;
+  transition: margin-left 0.5s;
+}
+
+.heroC_left div a:hover img {
+  margin-left: 20px;
+}
+
+.heroC_right {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  opacity: 0;
+  -webkit-transform: translateY(-15%);
+          transform: translateY(-15%);
+  -webkit-animation: SlideUp .5s 1s ease-in forwards;
+          animation: SlideUp .5s 1s ease-in forwards;
+  background-image: url("../images/asd.jpg");
+  background-size: cover;
 }
 /*# sourceMappingURL=main.css.map */
