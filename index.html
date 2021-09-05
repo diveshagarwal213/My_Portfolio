@@ -11,6 +11,7 @@
             display: none;
         }
     </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
     <div id="root">
@@ -56,13 +57,13 @@
         
         <div id=follow_me>
             <h3>Follow Me</h3>
-            <a href="https://github.com/diveshagarwal213">
+            <a href="https://github.com/diveshagarwal213" target="_blank">
                 <img src="images/GitHub-Mark-Light-32px.png" alt="GitHub">
             </a>
-            <a href="">
+            <a href="https://stackoverflow.com/users/15824706/divesh" target="_blank">
                 <img src="images/stackoverflow.png" alt="StackOverflow">
             </a>
-            <a href="">
+            <a href="https://www.sololearn.com/profile/10257727" target="_blank">
                 <img src="images/Sololearn.png" alt="Sololearn">
             </a>
         </div>
@@ -81,8 +82,19 @@
             <img src="images/menu.svg" alt="menu">
         </button>
 
+        <div id="nav">
+            <a href="">
+                <span>Home</span>
+                <img src="images/home-solid.svg" alt="GitHub">
+            </a>
+            <a href="">
+                <span>About</span>
+                <img src="images/user-tie-solid.svg" alt="GitHub">
+            </a>
+        </div>
+
     </div> 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
     <script>
         var slideIndex = 1;
         showDivs(slideIndex);
@@ -111,6 +123,10 @@
         $("#left_arows_menu button").click(function () {
             $(".heroC_left").css("animation","OnClickSlideUp 0.3s ease-in forwards");
             $(".heroC_right").css("animation","OnClickSlideDown 0.3s ease-in forwards");
+        });
+
+        $("#menu_button").click(function () {
+            $("#nav").slideToggle("slow");
         });
     </script>
 

@@ -180,6 +180,55 @@ h3 {
   height: 20px;
 }
 
+#nav {
+  position: absolute;
+  top: 60px;
+  right: 29px;
+  width: 100px;
+  height: 100px;
+  background-color: transparent;
+  display: none;
+  text-align: center;
+}
+
+#nav a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: 15px 0px;
+  border-right: 2px solid transparent;
+  overflow: hidden;
+  -webkit-transition: border-right 1s;
+  transition: border-right 1s;
+}
+
+#nav a span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  opacity: 0;
+  font-size: large;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
+}
+
+#nav a:hover {
+  border-right: 2px solid #ececec;
+}
+
+#nav a:hover span {
+  opacity: 1;
+}
+
+#nav img {
+  width: 30px;
+}
+
 /*--------*/
 @-webkit-keyframes SlideDown {
   0% {
@@ -329,6 +378,9 @@ h3 {
 
 /*----media----*/
 @media only screen and (max-width: 600px) {
+  #menu_button, #D_link, #nav, #follow_me {
+    z-index: 1;
+  }
   #left_arows_menu {
     top: auto;
     left: calc(50% - 50px);
