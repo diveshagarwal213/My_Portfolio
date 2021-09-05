@@ -412,11 +412,14 @@ h3 {
   }
   .heroC_left div p {
     margin: 1vh 0px 3vh 0px;
-    font-size: 2.5vw;
+    font-size: 3vw;
     width: 100%;
   }
   .heroC_left div a {
-    font-size: 2.5vw;
+    font-size: 3vw;
+  }
+  .heroC_left div text {
+    font-size: 4vw;
   }
   .heroC_right {
     background-position: center;
