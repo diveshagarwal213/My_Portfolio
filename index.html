@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Divesh - web template</title>
     <link rel="stylesheet" href="Style/main.css">
+    <style>
+        .hero_class{
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <div id="root">
@@ -25,8 +30,26 @@
                         </a>
                     </div>
                 </div>
-                <div class="heroC_right"></div>
+                <div class="heroC_right" style="background-image: url(images/My_image.jpg)"></div>
             </div>
+
+            <div class="hero_class">
+                <div class="heroC_left">
+                    <div>
+                        <text>Ecommerce</text>
+                        <h1>
+                            City Cakes
+                            <span>02</span>
+                        </h1>
+                        <p>Auctor cursus dolor gravida laoreet mi nostra nunc placerat pretium primis rhoncus. Ac adipiscing aenean facilisis felis iaculis ipsum lacus magnis non quisque rhoncus ridiculus sociosqu tincidu.</p>
+                        <a href="">VIEW PROJECT
+                            <img src="images/_arrow btn left.svg" alt="arrow">
+                        </a>
+                    </div>
+                </div>
+                <div class="heroC_right" style="background-image: url(images/project01.png)"></div>
+            </div>
+
         </div>
         <!--under hero-->
         <a href="" id="D_link" >D</a>
@@ -46,10 +69,10 @@
         
 
         <div id="left_arows_menu">
-            <button>
+            <button id="arrow_north" onclick="plusDivs(1)">
                 <img src="images/_arrow btn left.svg" alt="">
             </button>
-            <button >
+            <button id="arrow_south" onclick="plusDivs(-1)" >
                 <img style="transform: rotate(-90deg);" src="images/_arrow btn left.svg" alt="">
             </button>
         </div>
@@ -60,7 +83,36 @@
 
     </div> 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    
+    <script>
+        var slideIndex = 1;
+        showDivs(slideIndex);
+        
+        function plusDivs(n) {
+          showDivs(slideIndex += n);
+        }
+        
+        function showDivs(n) {
+            
+            setTimeout(function(){ 
+                $(".heroC_left").css("animation","SlideUp 0.5s ease-in forwards");
+                $(".heroC_right").css("animation","SlideDown 0.5s ease-in forwards");
+                var i;
+                var x = document.getElementsByClassName("hero_class");
+                if (n > x.length) {slideIndex = 1}
+                if (n < 1) {slideIndex = x.length}
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";  
+                }
+                x[slideIndex-1].style.display = "block";
+           }, 1000);
+            
+        }
+
+        $("#left_arows_menu button").click(function () {
+            $(".heroC_left").css("animation","OnClickSlideUp 0.3s ease-in forwards");
+            $(".heroC_right").css("animation","OnClickSlideDown 0.3s ease-in forwards");
+        });
+    </script>
 
 </body>
 </html>

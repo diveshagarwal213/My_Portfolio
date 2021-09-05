@@ -1,4 +1,55 @@
 @import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
+@-webkit-keyframes OnClickSlideUp {
+  0% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(-10%);
+            transform: translateY(-10%);
+    opacity: 0;
+  }
+}
+@keyframes OnClickSlideUp {
+  0% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(-10%);
+            transform: translateY(-10%);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes OnClickSlideDown {
+  0% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(10%);
+            transform: translateY(10%);
+    opacity: 0;
+  }
+}
+
+@keyframes OnClickSlideDown {
+  0% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(10%);
+            transform: translateY(10%);
+    opacity: 0;
+  }
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -20,11 +71,13 @@ body {
 a {
   text-decoration: none;
   color: var(--text-color);
+  -webkit-tap-highlight-color: transparent;
 }
 
 button {
   cursor: pointer;
   border: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 h3 {
@@ -81,7 +134,7 @@ h3 {
 #left_arows_menu {
   position: absolute;
   width: 80px;
-  height: 155px;
+  height: 300px;
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
@@ -98,12 +151,6 @@ h3 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-transition: height .5s ease-in-out;
-  transition: height .5s ease-in-out;
-}
-
-#left_arows_menu:hover {
-  height: 180px;
 }
 
 #left_arows_menu button {
@@ -116,16 +163,25 @@ h3 {
   margin: 0;
   padding: 0;
   background-color: transparent;
+  height: 150px;
+  -webkit-transition: height 0.5s;
+  transition: height 0.5s;
+}
+
+#left_arows_menu button:hover {
+  height: 120px;
 }
 
 #left_arows_menu button img {
+  -webkit-transition: margin-top 0.5s ease-in-out;
+  transition: margin-top 0.5s ease-in-out;
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
   height: 20px;
 }
 
 /*--------*/
-@-webkit-keyframes SlideUp {
+@-webkit-keyframes SlideDown {
   0% {
     -webkit-transform: translateY(-15%);
             transform: translateY(-15%);
@@ -137,7 +193,7 @@ h3 {
     opacity: 1;
   }
 }
-@keyframes SlideUp {
+@keyframes SlideDown {
   0% {
     -webkit-transform: translateY(-15%);
             transform: translateY(-15%);
@@ -150,7 +206,7 @@ h3 {
   }
 }
 
-@-webkit-keyframes SlideDown {
+@-webkit-keyframes SlideUp {
   0% {
     -webkit-transform: translateY(10%);
             transform: translateY(10%);
@@ -163,7 +219,7 @@ h3 {
   }
 }
 
-@keyframes SlideDown {
+@keyframes SlideUp {
   0% {
     -webkit-transform: translateY(10%);
             transform: translateY(10%);
@@ -195,8 +251,8 @@ h3 {
   width: 50%;
   height: 100%;
   opacity: 0;
-  -webkit-animation: SlideDown .5s 1s ease-in forwards;
-          animation: SlideDown .5s 1s ease-in forwards;
+  -webkit-animation: SlideUp .5s .7s ease-in forwards;
+          animation: SlideUp .5s .7s ease-in forwards;
   z-index: 1;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -219,14 +275,10 @@ h3 {
   margin: 2vh 0px 0px 0px;
   font-size: 6vw;
   color: #fff;
-  position: relative;
 }
 
 .heroC_left div h1 span {
-  position: absolute;
   font-size: 1vw;
-  top: 0;
-  right: 3vw;
 }
 
 .heroC_left div p {
@@ -268,9 +320,58 @@ h3 {
   opacity: 0;
   -webkit-transform: translateY(-15%);
           transform: translateY(-15%);
-  -webkit-animation: SlideUp .5s 1s ease-in forwards;
-          animation: SlideUp .5s 1s ease-in forwards;
-  background-image: url("../images/asd.jpg");
+  -webkit-animation: SlideDown .5s .7s ease-in forwards;
+          animation: SlideDown .5s .7s ease-in forwards;
   background-size: cover;
+  -webkit-filter: brightness(90%);
+          filter: brightness(90%);
+}
+
+/*----media----*/
+@media only screen and (max-width: 600px) {
+  #left_arows_menu {
+    top: auto;
+    left: calc(50% - 50px);
+    bottom: 10%;
+    z-index: 1;
+    height: 200px;
+    width: 100px;
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+  #left_arows_menu button {
+    height: 80px;
+  }
+  #left_arows_menu button:hover {
+    height: 50px;
+  }
+  #left_arows_menu button img {
+    height: 4vw;
+  }
+  .heroC_left {
+    left: 0%;
+    width: 100%;
+  }
+  .heroC_left div {
+    width: 90%;
+  }
+  .heroC_left div h1 {
+    font-size: 8vw;
+  }
+  .heroC_left div p {
+    margin: 1vh 0px 3vh 0px;
+    font-size: 2.5vw;
+    width: 100%;
+  }
+  .heroC_left div a {
+    font-size: 2.5vw;
+  }
+  .heroC_right {
+    background-position: center;
+    left: 0%;
+    width: 100%;
+    -webkit-filter: brightness(60%);
+            filter: brightness(60%);
+  }
 }
 /*# sourceMappingURL=main.css.map */
