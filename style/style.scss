@@ -15,6 +15,24 @@ a{
     cursor: pointer;
 }
 
+@keyframes slow {
+    0%{
+        opacity: 0;
+        transform: translateY(20px);
+        }
+    100%{opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes slowdown {
+    0%{
+        opacity: 0;
+        }
+    100%{opacity: 1;
+    }
+}
+
 
 
 :root{
@@ -150,6 +168,8 @@ body{
     height: 100px;
     backdrop-filter: blur(5px);
     nav{
+        opacity: 0;
+        animation: slowdown 0.25s 0.45s ease-in forwards;
         width: fit-content;
         display: flex;
         justify-content: space-around;
@@ -166,6 +186,8 @@ body{
     }
 }
 .d_link{
+    opacity: 0;
+        animation: slowdown 0.25s 0.25s ease-in forwards;
     border: 2px solid var(--text-primary);
     padding: 5px 8px;
     font-size: 24px;
@@ -173,6 +195,8 @@ body{
     color: var(--text-primary);
 }
 .socialList{
+    opacity: 0;
+    animation: slowdown 0.25s 1.5s ease-in forwards;
     position: fixed;
     bottom: 0;
     left: 50px;
@@ -215,6 +239,9 @@ body{
 }
 
 .emailaddress{
+    opacity: 0;
+    animation: slowdown 0.25s 1.5s ease-in forwards;
+
     position: fixed;
     bottom: 0;
     right: 50px;
@@ -274,15 +301,23 @@ main{
         color :var(--text-primary);
         font-weight: 400;
         margin-bottom: 20px;
+        opacity: 0;
+        animation: slow 0.25s 1s ease-in forwards;
     }
     h1{
+        opacity: 0;
+        animation: slow 0.35s 1s ease-in forwards;
         color: var(--text-secondary);
     }
     h2{
+        opacity: 0;
+        animation: slow 0.45s 1s ease-in forwards;
         color: var(--text-3);
         width: 80%;
     }
     p{
+        opacity: 0;
+        animation: slow 0.55s 1s ease-in forwards;
         margin-top: 20px;
         color: var(--text-3);
         max-width: 540px;
@@ -291,6 +326,8 @@ main{
         font-size: 60px;
     }
     a{
+        opacity: 0;
+        animation: slow 0.65s 1s ease-in forwards;
         display: inline-block;
         margin: 40px 0px;
         font-family: 'Roboto Mono', monospace;
@@ -302,10 +339,18 @@ main{
 
 .aboutMe{
     margin-top: 150px;
+    overflow: hidden;
 }
 .aboutMe_div{
     display: flex;
     //border: 1px solid yellow;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 1s;
+    &.active{
+        transform: translateY(0px);
+        opacity: 1;
+    }
     .aboutMe_cont{
         //border: 1px solid red;
         width: 50%;
@@ -349,7 +394,7 @@ main{
         position: relative;
         border-radius: 4px;
         
-        background-image: url('/style/My_image.jpg');
+        background-image: url('./My_image.jpg');
         background-position: top;
         background-repeat: no-repeat;
         background-size: cover;
@@ -393,7 +438,13 @@ main{
 .someThings{
     margin-top: 150px;
 }
+
+.project_div{
+    overflow: hidden;
+}
 .project_div_card{
+    
+
     height: 300px;
     //border: 1px solid green;
     margin-bottom: 100px;
@@ -409,6 +460,10 @@ main{
         border-radius: 4px;
         position: absolute;
 
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
         &:hover{
             &::before{
                 opacity: 0;
@@ -418,7 +473,7 @@ main{
         &::before{
             content: "";
             background: var(--text-primary);
-            opacity: 0.3;
+            opacity: 0.7;
             display: block;
             position: absolute;
             width: 100%;
@@ -477,6 +532,13 @@ main{
    
 
     &.right{
+        transform: translateX(200px);
+        opacity: 0;
+        transition: all 1s;
+        &.active{
+            transform: translateX(0px);
+            opacity: 1;
+        }
         .project_cont{
             text-align: right;
             right: 0;
@@ -487,6 +549,13 @@ main{
     }
     &.left{
         flex-direction: row-reverse;
+        transform: translateX(-200px);
+        opacity: 0;
+        transition: all 1s;
+        &.active{
+            transform: translateX(0px);
+            opacity: 1;
+        }
         .project_cont{
             left: 0;
             text-align: left;
@@ -531,6 +600,14 @@ main{
     }
 }
 .op_div_card{
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 1s;
+    &.active{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -587,7 +664,7 @@ main{
 }
 
 .getInTouch{
-    height: 100vh;
+    height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -620,14 +697,14 @@ main{
         padding: 15px 30px;
     }
 }
-
 .quto{
     text-align: center;
-    margin-bottom: 20px;
     font-weight: 300;
     font-size: small;
     font-family: var(--fontf-primary);
     padding: 20px;
+
+    overflow: hidden;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -686,7 +763,7 @@ main{
         height: 300px;
         .project_img{
             width: 100%;
-            opacity: 0.25;
+            opacity: 0.1;
         }
         .project_cont{
             width: 100%;

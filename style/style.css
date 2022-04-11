@@ -14,6 +14,50 @@ a {
   cursor: pointer;
 }
 
+@-webkit-keyframes slow {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+
+@keyframes slow {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+
+@-webkit-keyframes slowdown {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slowdown {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 :root {
   /* --primary : #0a192f;
     --primary-light : #112240;
@@ -157,6 +201,9 @@ body {
 }
 
 .header nav {
+  opacity: 0;
+  -webkit-animation: slowdown 0.25s 0.45s ease-in forwards;
+          animation: slowdown 0.25s 0.45s ease-in forwards;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -182,6 +229,9 @@ body {
 }
 
 .d_link {
+  opacity: 0;
+  -webkit-animation: slowdown 0.25s 0.25s ease-in forwards;
+          animation: slowdown 0.25s 0.25s ease-in forwards;
   border: 2px solid var(--text-primary);
   padding: 5px 8px;
   font-size: 24px;
@@ -190,6 +240,9 @@ body {
 }
 
 .socialList {
+  opacity: 0;
+  -webkit-animation: slowdown 0.25s 1.5s ease-in forwards;
+          animation: slowdown 0.25s 1.5s ease-in forwards;
   position: fixed;
   bottom: 0;
   left: 50px;
@@ -246,6 +299,9 @@ body {
 }
 
 .emailaddress {
+  opacity: 0;
+  -webkit-animation: slowdown 0.25s 1.5s ease-in forwards;
+          animation: slowdown 0.25s 1.5s ease-in forwards;
   position: fixed;
   bottom: 0;
   right: 50px;
@@ -322,18 +378,30 @@ main > div {
   color: var(--text-primary);
   font-weight: 400;
   margin-bottom: 20px;
+  opacity: 0;
+  -webkit-animation: slow 0.25s 1s ease-in forwards;
+          animation: slow 0.25s 1s ease-in forwards;
 }
 
 .hero h1 {
+  opacity: 0;
+  -webkit-animation: slow 0.35s 1s ease-in forwards;
+          animation: slow 0.35s 1s ease-in forwards;
   color: var(--text-secondary);
 }
 
 .hero h2 {
+  opacity: 0;
+  -webkit-animation: slow 0.45s 1s ease-in forwards;
+          animation: slow 0.45s 1s ease-in forwards;
   color: var(--text-3);
   width: 80%;
 }
 
 .hero p {
+  opacity: 0;
+  -webkit-animation: slow 0.55s 1s ease-in forwards;
+          animation: slow 0.55s 1s ease-in forwards;
   margin-top: 20px;
   color: var(--text-3);
   max-width: 540px;
@@ -344,6 +412,9 @@ main > div {
 }
 
 .hero a {
+  opacity: 0;
+  -webkit-animation: slow 0.65s 1s ease-in forwards;
+          animation: slow 0.65s 1s ease-in forwards;
   display: inline-block;
   margin: 40px 0px;
   font-family: 'Roboto Mono', monospace;
@@ -354,12 +425,24 @@ main > div {
 
 .aboutMe {
   margin-top: 150px;
+  overflow: hidden;
 }
 
 .aboutMe_div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-transform: translateY(20px);
+          transform: translateY(20px);
+  opacity: 0;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.aboutMe_div.active {
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+  opacity: 1;
 }
 
 .aboutMe_div .aboutMe_cont {
@@ -411,7 +494,7 @@ main > div {
   height: 275px;
   position: relative;
   border-radius: 4px;
-  background-image: url("/style/My_image.jpg");
+  background-image: url("./My_image.jpg");
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
@@ -458,6 +541,10 @@ main > div {
   margin-top: 150px;
 }
 
+.project_div {
+  overflow: hidden;
+}
+
 .project_div_card {
   height: 300px;
   margin-bottom: 100px;
@@ -473,6 +560,9 @@ main > div {
   height: 100%;
   border-radius: 4px;
   position: absolute;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .project_div_card .project_img:hover::before {
@@ -482,7 +572,7 @@ main > div {
 .project_div_card .project_img::before {
   content: "";
   background: var(--text-primary);
-  opacity: 0.3;
+  opacity: 0.7;
   display: block;
   position: absolute;
   width: 100%;
@@ -542,6 +632,20 @@ main > div {
   margin: 0px 10px;
 }
 
+.project_div_card.right {
+  -webkit-transform: translateX(200px);
+          transform: translateX(200px);
+  opacity: 0;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.project_div_card.right.active {
+  -webkit-transform: translateX(0px);
+          transform: translateX(0px);
+  opacity: 1;
+}
+
 .project_div_card.right .project_cont {
   text-align: right;
   right: 0;
@@ -558,6 +662,17 @@ main > div {
   -webkit-box-direction: reverse;
       -ms-flex-direction: row-reverse;
           flex-direction: row-reverse;
+  -webkit-transform: translateX(-200px);
+          transform: translateX(-200px);
+  opacity: 0;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.project_div_card.left.active {
+  -webkit-transform: translateX(0px);
+          transform: translateX(0px);
+  opacity: 1;
 }
 
 .project_div_card.left .project_cont {
@@ -612,6 +727,11 @@ main > div {
 }
 
 .op_div_card {
+  -webkit-transform: translateY(20px);
+          transform: translateY(20px);
+  opacity: 0;
+  -webkit-transition: all 1s;
+  transition: all 1s;
   padding: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -623,6 +743,12 @@ main > div {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+.op_div_card.active {
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+  opacity: 1;
 }
 
 .op_div_card:hover {
@@ -688,7 +814,7 @@ main > div {
 }
 
 .getInTouch {
-  height: 100vh;
+  height: 80vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -740,11 +866,11 @@ main > div {
 
 .quto {
   text-align: center;
-  margin-bottom: 20px;
   font-weight: 300;
   font-size: small;
   font-family: var(--fontf-primary);
   padding: 20px;
+  overflow: hidden;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -807,7 +933,7 @@ main > div {
   }
   .project_div_card .project_img {
     width: 100%;
-    opacity: 0.25;
+    opacity: 0.1;
   }
   .project_div_card .project_cont {
     width: 100%;
