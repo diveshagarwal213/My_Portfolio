@@ -343,7 +343,6 @@ main{
 }
 .aboutMe_div{
     display: flex;
-    //border: 1px solid yellow;
     transform: translateY(20px);
     opacity: 0;
     transition: all 1s;
@@ -381,10 +380,10 @@ main{
     }
     .aboutMe_img_div{
         width: 50%;
-        //border: 1px solid green;
        
         display: flex;
         justify-content: center;
+        
     }
     .aboutMe_img{
         //border: 1px solid red;
@@ -757,6 +756,7 @@ main{
             min-height:300px ;
             justify-content: center;
             align-items: center;
+            padding-bottom: 30px;
         }
     }
     .project_div_card{
