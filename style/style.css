@@ -77,11 +77,13 @@ a {
   --primary: #232931;
   --primary-light: #393E46;
   --text-primary: #4ECCA3;
+  --text-primary-100: hsla(166, 100%, 70%, 0.100);
   --fontf-primary: 'Roboto Mono', monospace;
   --fontf-secondary: 'Inter', sans-serif;
   --text-secondary: #ccd6f6;
   --text-3:#8892b0;
   --shadow: rgba(2,12,27,0.7);
+  --nav-shadow: hsl(213, 15%, 12%);
   --box-shado: 0 10px 30px -15px rgba(2,12,27,0.7);
 }
 
@@ -164,7 +166,7 @@ body {
 }
 
 .a_th1:hover {
-  background-color: rgba(102, 255, 219, 0.1);
+  background-color: var(--text-primary-100);
   -webkit-transition: border .5s;
   transition: border .5s;
 }
@@ -179,12 +181,27 @@ body {
   stroke: var(--text-primary);
 }
 
+.btn-th3 {
+  color: var(--text-3);
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+.btn-th3.active {
+  color: var(--text-primary);
+  background-color: var(--primary-light);
+}
+
 body {
   background: var(--primary);
   font-family: 'Inter', sans-serif;
 }
 
 .header {
+  position: fixed;
+  width: 100%;
+  top: 0;
   padding: 10px 5%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -195,9 +212,13 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 100px;
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
+  height: 70px;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  background-color: rgba(35, 41, 49, 0.9);
+  z-index: 2;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .header nav {
@@ -237,6 +258,10 @@ body {
   font-size: 24px;
   font-weight: 400;
   color: var(--text-primary);
+}
+
+.d_link:hover {
+  background-color: var(--text-primary-100);
 }
 
 .socialList {
@@ -356,7 +381,7 @@ body {
 }
 
 main {
-  padding: 80px 100px;
+  padding: 24px 100px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -367,6 +392,7 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-top: 100px;
 }
 
 main > div {
@@ -535,6 +561,60 @@ main > div {
   border-radius: 4px;
   -webkit-transition: all 0.25s;
   transition: all 0.25s;
+}
+
+.experience {
+  margin-top: 150px;
+  display: none;
+}
+
+.experience_div {
+  min-height: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.experience_div_btns {
+  max-width: 150px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.experience_div_btns button {
+  padding: 15px 20px;
+  text-align: left;
+  border: none;
+}
+
+.experience_div_cont {
+  padding-left: 30px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.experience_div_cont h3 {
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+
+.experience_div_cont h3 span {
+  word-spacing: -5px;
+}
+
+.experience_div_cont p {
+  font-size: small;
+  margin-bottom: 20px;
 }
 
 .someThings {

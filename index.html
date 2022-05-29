@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
-    <div class="header">
-        <div class="d_link">D</div>
+    <div id="nav_bar" class="header">
+        <a href="" class="d_link">D</a>
         <nav>
             <a href="#about" class="txt_hover" > <span>01.</span>About </a>
             <a href="#projects" class="txt_hover"> <span>02.</span>Projects </a>
@@ -59,8 +59,49 @@
             </div>
         </div>
 
+        <div id="exp" class="experience" >
+            <h2 class="heading h-line" > <span class="txt-p" >02. </span>Where I’ve Worked</h2>
+            <div class="experience_div reveal" >
+               <div class="experience_div_btns" >
+                
+                <button 
+                    class="tablinks btn-th3 active" onclick="openCity(event,'one')"
+                > 
+                    VibenCode 
+                </button>
+                
+                <button 
+                    class="tablinks btn-th3" 
+                    onclick="openCity(event,'two')"
+                > 
+                    demo
+                </button>
+
+               </div>
+               <div class="experience_div_cont" >
+                    <div id="one" class="waw_tab_cont" >
+                        <h3>Frontend Developer &nbsp;<span class="txt-p" > @ VibenCode</span> </h3>
+                        <p>
+                            April 2022 - present
+                        </p>
+                        <div>
+                            <ul>
+                                <li>Some text SomeText text Some text SomeText textSome text SomeText textSome text SomeText textSome text SomeText text</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div id="two" class="waw_tab_cont" style="display: none;" >
+                        <p>
+                           put it back together into an MVP ready for market fit testing.
+                        </p>
+                    </div>
+               </div>
+            </div>
+        </div>
+
         <div id="projects" class="someThings" >
-            <h2 class="heading h-line" > <span class="txt-p" >02. </span> Some Things I've Built</h2>
+            <h2 class="heading h-line" > <span class="txt-p" >03. </span> Some Things I've Built</h2>
             <div class="project_div " >
                 
                 <div class="project_div_card right reveal" >

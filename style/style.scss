@@ -59,12 +59,14 @@ a{
     --primary : #232931;
     --primary-light : #393E46;
     --text-primary: #4ECCA3;
+    --text-primary-100: hsla(166, 100%, 70%, 0.100);
 
     --fontf-primary: 'Roboto Mono', monospace;
     --fontf-secondary: 'Inter', sans-serif;
     --text-secondary: #ccd6f6;
     --text-3 :#8892b0;
     --shadow: rgba(2,12,27,0.7);
+    --nav-shadow : hsl(213, 15%, 12%);
     --box-shado: 0 10px 30px -15px rgba(2,12,27,0.7);
 }
 
@@ -135,7 +137,7 @@ body{
     border: 1px solid var(--text-primary);
     border-radius: 4px;
     &:hover{
-        background-color: hsla(166, 100%, 70%, 0.100);
+        background-color: var(--text-primary-100);
         transition: border .5s;
     }
 }
@@ -153,6 +155,17 @@ body{
     }
 }
 
+.btn-th3{
+    color: var(--text-3);
+    background: transparent;
+    border: none;
+    outline: none;
+    &.active{
+        color: var(--text-primary);
+        background-color: var(--primary-light);
+    }
+}
+
 //global classes end
 
 body{
@@ -161,12 +174,18 @@ body{
 }
 
 .header{
+    position: fixed;
+    width: 100%;
+    top: 0;
     padding: 10px 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 100px;
-    backdrop-filter: blur(5px);
+    height: 70px;
+    backdrop-filter: blur(10px);
+    background-color: rgba(35, 41, 49, 0.9);
+    z-index: 2;
+    transition: all 0.5s;
     nav{
         opacity: 0;
         animation: slowdown 0.25s 0.45s ease-in forwards;
@@ -193,6 +212,9 @@ body{
     font-size: 24px;
     font-weight: 400;
     color: var(--text-primary);
+    &:hover{
+        background-color: var(--text-primary-100);
+    }
 }
 .socialList{
     opacity: 0;
@@ -284,10 +306,11 @@ body{
 
 main{
     //border: 1px solid red;
-    padding: 80px 100px;
+    padding: 24px 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 100px;
     >div{
         //border: 1px solid red;
         width: 70%;//media required
@@ -431,6 +454,42 @@ main{
             border-radius: 4px;
             transition: all 0.25s;
         }
+    }
+}
+
+.experience{
+    margin-top: 150px;
+    display: none;
+}
+.experience_div{
+    min-height: 300px;
+    display: flex;
+    justify-content: center;
+}
+.experience_div_btns{
+    max-width: 150px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    button{
+        padding: 15px 20px;
+        text-align: left;
+        border: none;
+    }
+}
+.experience_div_cont{
+    padding-left: 30px;
+    flex-grow: 1;
+    h3{
+        font-size: 22px;
+        margin-bottom: 5px;
+        span{
+            word-spacing: -5px;
+        }
+    }
+    p{
+        font-size: small;
+        margin-bottom: 20px;
     }
 }
 
